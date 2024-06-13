@@ -1,0 +1,258 @@
+@charset 'utf-8';
+#container {
+  background: var(--black) url(../img/visual-bg.png) no-repeat;
+}
+.visual {
+  /* height: 108rem; */
+  position: relative;
+  height: 108rem;
+}
+.gra1 {
+  position: absolute;
+  top: -30rem;
+  left: 36rem;
+}
+.gra2 {
+  position: absolute;
+  top: 56rem;
+  left: -20rem;
+}
+.gra3 {
+  position: absolute;
+  top: 60rem;
+  left: 42rem;
+}
+.planet {
+  position: absolute;
+  top: -16rem;
+  right: -26rem;
+}
+.visual .inner {
+  position: relative;
+  height: 100%;
+}
+.visual-title {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  color: #fff;
+}
+.visual-title h2 {
+  font-size: 19rem;
+  font-family: 'Cafe24Simplehae';
+  line-height: 100%;
+  text-transform: uppercase;
+}
+.visual-title h2 em {
+  font-family: 'Birds of Paradise  Personal use';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.visual-title strong {
+  font-family: 'Cafe24Simplehae';
+  font-size: 6.4rem;
+}
+.visual-title p {
+  font-size: 3.2rem;
+  font-weight: 400;
+  margin-top: 4rem;
+}
+.visual-title p b {
+  font-weight: 700;
+}
+.visual-info {
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Cafe24Simplehae';
+  position: absolute;
+  bottom: 10rem;
+}
+.visual-info-major {
+  display: flex;
+}
+.about {
+  border: 1px solid #ff0;
+  position: relative;
+  margin-top: 20rem;
+}
+
+.about h3 {
+  font-size: 14rem;
+  font-family: 'Cafe24Simplehae';
+  line-height: 100%;
+  color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+.about-con-wrap {
+  width: 80rem;
+  height: 80rem;
+  margin: 1rem auto;
+  position: relative;
+}
+.about-bg {
+  width: 100%;
+  height: 100%;
+  background: url(../img/about-bg.png) no-repeat 0 0 / cover;
+}
+
+.about-con {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 62rem;
+  height: 62rem;
+  border-radius: 50%;
+  background: var(--black);
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.about-con h4 {
+  font-size: 4rem;
+}
+.about-con h4 b {
+  font-weight: 700;
+}
+.about-con p {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  line-height: 150%;
+}
+
+.btn-about-me {
+  display: flex;
+  width: 200px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50px;
+  z-index: 10;
+  color: #000;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+.work {
+  border: 1px solid #ff0;
+  margin-top: 20rem;
+}
+.work-wrap {
+  display: flex;
+  width: 182rem;
+  height: 86.2rem;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 3rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  gap: 18rem;
+}
+.work-title {
+  margin-left: 7rem;
+  color: #000;
+  width: 40.5rem;
+}
+.work-title h3 {
+  font-size: 14rem;
+  font-family: 'Cafe24Simplehae';
+  line-height: 100%;
+}
+.work-title p {
+  font-size: 1.8rem;
+  margin-top: 2.4rem;
+}
+.btn-more {
+  display: flex;
+  width: 200px;
+  height: 60px;
+  background: #000;
+  border-radius: 50px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+/* 슬라이더 */
+.work-slider-wrap {
+  border: 1px solid #000;
+  width: 1183px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work-slider {
+  border: 1px solid #f00;
+}
+
+.work-slider .swiper-slide {
+  width: 742px;
+  filter: grayscale(1);
+  transform: scale(0.666);
+  transition: 0.4s;
+  transform-origin: 50% 0;
+}
+.work-list-con {
+  display: none;
+}
+
+.work-slider .swiper-slide-active {
+  filter: grayscale(0);
+  transform: scale(1);
+}
+.work-slider .swiper-slide-active .work-list-con {
+  display: block;
+}
+
+.work-list figure {
+  aspect-ratio: 1/0.73;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.work-list figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-list-con {
+  width: 100%;
+}
+.work-list-con dl {
+  margin-top: 2rem;
+}
+.work-list-con dl dt {
+  font-family: 'Cafe24Simplehae';
+  font-size: 6rem;
+  line-height: 100%;
+}
+.work-list-con dl dd {
+  font-family: 'Cafe24Simplehae';
+  font-size: 2.4rem;
+  color: #333;
+  line-height: 100%;
+  margin-top: 1rem;
+}
+
+.btn-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #ff5;
+  z-index: 10;
+}

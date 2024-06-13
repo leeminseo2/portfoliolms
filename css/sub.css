@@ -1,0 +1,128 @@
+@charset 'utf-8';
+#container {
+  background: url(../img/aboutme-bg.png) no-repeat;
+}
+h2 {
+  font-size: 14rem;
+  font-family: 'Cafe24Simplehae';
+  line-height: 100%;
+  text-transform: uppercase;
+  padding-top: 21rem;
+  color: #fff;
+}
+.about-me {
+  width: 182rem;
+  background: var(--black50);
+  border-radius: 30px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-me-con {
+  height: 70.4rem;
+  color: #fff;
+  padding-top: 19.5rem;
+  text-align: center;
+}
+.about-me-con strong {
+  display: block;
+  font-size: 5rem;
+}
+.about-me-con strong b {
+  font-weight: 700;
+}
+.about-me-con h3 {
+  font-size: 7rem;
+}
+.about-me-con h3 b {
+  font-weight: 700;
+}
+.about-me-con p {
+  font-size: 2.8rem;
+  margin-top: 4.4rem;
+}
+.about-me-info {
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+}
+.about-me-info h4 {
+  font-family: 'Cafe24Simplehae';
+  font-size: 6rem;
+  line-height: 100%;
+}
+.about-me-info-person {
+  display: flex;
+  gap: 178px;
+  width: 50%;
+}
+.about-me-info-person-list li {
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  line-height: 100%;
+}
+.about-me-info-tool {
+  display: flex;
+  gap: 178px;
+  width: 50%;
+}
+.about-me-info-tool-list {
+  display: flex;
+  flex-direction: column;
+}
+.about-me-info-tool-list-1 {
+  display: flex;
+  gap: 2rem;
+}
+.about-me-info-tool-list-2 {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.word {
+  margin-top: 25rem;
+}
+.word-keyword {
+  width: 100%;
+  height: 57.6rem;
+  background: #fff;
+  border-radius: 3rem;
+  position: relative;
+  margin-top: 6rem;
+}
+
+.word-con {
+  color: #000;
+  position: absolute;
+  right: 14.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 74rem;
+}
+
+.word-con h4 {
+  font-family: 'Cafe24Simplehae';
+  font-size: 8.4rem;
+}
+.word-con strong {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 3rem;
+}
+.word-con p {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+.word-img {
+  position: absolute;
+  left: 0;
+  width: 686px;
+  height: 100%;
+  border-radius: 3rem;
+  overflow: hidden;
+}
+.word-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
