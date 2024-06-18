@@ -20,7 +20,7 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
 :root {
-  --point: #0085ff;
+  --point: #1bbaff;
   --black: #000;
   --black50: rgba(0, 0, 0, 0.5);
   --point: #fff;
@@ -103,7 +103,7 @@ img {
   z-index: 10;
 }
 
-.gnb > li {
+.gnb li {
   display: block;
   margin: 0 3.5rem;
   /* border: 1px solid #000; */
@@ -111,8 +111,11 @@ img {
   font-size: 2rem;
   color: #fff;
   position: relative;
+  transition: 0.4s;
 }
-
+.gnb li:hover {
+  color: #1bbaff;
+}
 /* footer */
 #footer h3 {
   font-size: 100px;
@@ -153,6 +156,12 @@ img {
 }
 .foot-con-list-item:hover .foot-con-list-item-hover {
   opacity: 1;
+}
+.point {
+  transition: 0.4s;
+}
+.point:hover {
+  color: #1bbaff;
 }
 #footer strong {
   display: block;

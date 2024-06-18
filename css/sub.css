@@ -1,7 +1,5 @@
 @charset 'utf-8';
-#container {
-  background: url(../img/aboutme-bg.png) no-repeat;
-}
+
 h2 {
   font-size: 14rem;
   font-family: 'Cafe24Simplehae';
@@ -9,6 +7,9 @@ h2 {
   text-transform: uppercase;
   padding-top: 21rem;
   color: #fff;
+}
+.me {
+  background: url(../img/aboutme-bg.png) no-repeat;
 }
 .about-me {
   width: 182rem;
@@ -82,22 +83,34 @@ h2 {
 .word {
   margin-top: 25rem;
 }
+.word > .inner {
+  perspective: 1000px;
+}
 .word-keyword {
   width: 100%;
   height: 57.6rem;
   background: #fff;
   border-radius: 3rem;
-  position: relative;
-  margin-top: 6rem;
-}
 
+  margin-top: 6rem;
+  display: flex;
+  gap: 1rem;
+}
+.word-keyword:nth-child(2) {
+  flex-direction: row-reverse;
+}
+.word-img {
+  width: 41.666%;
+}
+.word-img img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 .word-con {
   color: #000;
-  position: absolute;
-  right: 14.2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 74rem;
+  width: 58.333%;
+  padding: 10.2rem;
 }
 
 .word-con h4 {
@@ -113,16 +126,114 @@ h2 {
   font-size: 1.8rem;
   margin-top: 2rem;
 }
-.word-img {
-  position: absolute;
-  left: 0;
-  width: 686px;
-  height: 100%;
-  border-radius: 3rem;
-  overflow: hidden;
+/* worksub */
+.project {
+  background: url(../img/work-bg.png) no-repeat;
 }
-.word-img img {
-  width: 100%;
+.project-gnb {
+  padding-top: 12.8rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.project-gnb li {
+  transition: 0.4s;
+}
+.project-gnb li:hover {
+  color: #1bbaff;
+}
+.project-slide {
+  position: relative;
+}
+.project-slide-con {
+  color: #fff;
+  position: absolute;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 41.4285%;
   height: 100%;
-  object-fit: cover;
+  border-radius: 0 50% 50% 0;
+  padding: 7rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.project-slide-con h2 {
+  font-size: 60px;
+  margin-top: 10px;
+  padding-top: 0;
+}
+.project-slide-con p {
+  margin-top: 4rem;
+  font-size: 18px;
+}
+.project-slide-tool-list {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.project-gnb li {
+  display: block;
+  margin: 0 3.5rem;
+  /* border: 1px solid #000; */
+  font-family: 'Cafe24Simplehae';
+  font-size: 3rem;
+  color: #fff;
+}
+
+.project-slider {
+  /*  border: 10px solid #ff0; */
+  width: 1820px;
+  margin: 3rem auto 0;
+  height: 86rem;
+  overflow: hidden;
+  border-radius: 30px;
+  position: relative;
+}
+.project-slide-tool h3 {
+  margin-top: 7rem;
+}
+.project-slider .swiper-pagination {
+  z-index: 10;
+  /* background: #5f5; */
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  transform: translateX(-50%);
+  right: 7rem;
+}
+.project-slider .swiper-pagination .swiper-pagination-bullet {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+.project-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background: #fff;
+}
+.links {
+  display: flex;
+  gap: 1rem;
+}
+.links a {
+  display: flex;
+  width: 200px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50px;
+  color: #000;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7rem;
+  transition: 0.4s;
+}
+.links a:hover {
+  background: #1bbaff;
+  color: #fff;
 }
