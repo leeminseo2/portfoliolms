@@ -1,6 +1,7 @@
 $(function () {
   // Initialize the work slider
   gsap.registerPlugin(ScrollTrigger);
+
   const workSlider = new Swiper('.work-slider', {
     loop: true,
     slidesPerView: 'auto',
@@ -9,6 +10,7 @@ $(function () {
       prevEl: '.btn-prev',
     },
   });
+
   // 메인헤더 애니메이션
   const mainTL = gsap.timeline();
   mainTL
@@ -35,17 +37,14 @@ $(function () {
     },
   });
 
-  aboutTL.from('.about-con-wrap', { scale: 0.2, duration: 5 });
-  aboutTL.from(
-    '.about-con > *',
-    {
-      y: 100,
-      autoAlpha: 0,
-      duration: 4,
-      stagger: 0.3,
-    },
-    '-=0.3'
-  );
+  aboutTL.from('.about h3', { y: 100, autoAlpha: 0, duration: 4 });
+  aboutTL.from('.about-con-wrap', { scale: 0.2, duration: 7 });
+  aboutTL.from('.about-con > *', {
+    y: 100,
+    autoAlpha: 0,
+    duration: 4,
+    stagger: 3,
+  });
   aboutTL.to('.fake', { x: 1, duration: 15, delay: 10 });
 
   const workTL = gsap.timeline({
@@ -71,4 +70,15 @@ $(function () {
       duration: 0.4,
       delay: 0.1,
     });
+  // Ensure GSAP and ScrollTrigger plugins are loaded
+  // Ensure GSAP and ScrollTrigger plugins are loaded
+  const footerTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#footer',
+      start: 'top bottom', // '#footer' top reaches viewport top
+      markers: true, // Optional: adds visual markers for debugging
+    },
+  });
+
+  footerTL.from('#footer', { y: 100, autoAlpha: 0, duration: 1 });
 });

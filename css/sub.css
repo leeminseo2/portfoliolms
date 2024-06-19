@@ -22,7 +22,7 @@ h2 {
 .about-me-con {
   height: 70.4rem;
   color: #fff;
-  padding-top: 19.5rem;
+  padding-top: 12rem;
   text-align: center;
 }
 .about-me-con strong {
@@ -38,6 +38,7 @@ h2 {
 .about-me-con h3 b {
   font-weight: 700;
 }
+
 .about-me-con p {
   font-size: 2.8rem;
   margin-top: 4.4rem;
@@ -127,23 +128,40 @@ h2 {
   margin-top: 2rem;
 }
 /* worksub */
-.project {
-  background: url(../img/work-bg.png) no-repeat;
-}
-.project-gnb {
+
+.tab-menu {
   padding-top: 12.8rem;
   color: #fff;
   display: flex;
   justify-content: center;
+  font-family: 'Cafe24Simplehae';
+  font-size: 3.2rem;
 }
-.project-gnb li {
+.tab-menu a {
+  display: flex;
+  width: 160px;
+  height: 60px;
   transition: 0.4s;
+  justify-content: center;
+  align-items: center;
 }
-.project-gnb li:hover {
+.tab-menu a:hover {
+  color: #1bbaff;
+}
+.tab-menu a.on {
   color: #1bbaff;
 }
 .project-slide {
   position: relative;
+}
+.project-slide figure {
+  width: 100%;
+  height: 860px;
+}
+.project-slide figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .project-slide-con {
   color: #fff;
@@ -160,7 +178,9 @@ h2 {
   display: flex;
   align-items: center;
 }
-
+.project-slide-con strong {
+  display: block;
+}
 .project-slide-con h2 {
   font-size: 60px;
   margin-top: 10px;
@@ -193,6 +213,26 @@ h2 {
   border-radius: 30px;
   position: relative;
 }
+
+@keyframes slideCon {
+  0% {
+    transform: translateX(-200px);
+    filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.swiper-slide {
+  transition: 0.4s;
+}
+.swiper-slide-active .project-slide-text {
+  animation: slideCon 0.7s ease-in-out;
+}
+
 .project-slide-tool h3 {
   margin-top: 7rem;
 }
@@ -236,4 +276,37 @@ h2 {
 .links a:hover {
   background: #1bbaff;
   color: #fff;
+}
+
+.btn-wrap-white {
+  position: absolute;
+  z-index: 200;
+
+  bottom: 7rem;
+  right: 5.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.btn-wrap-white .btn-prev-white {
+  display: block;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+
+  background: url(../img/prev-white.png) no-repeat 50%;
+  transition: 0.4s;
+  rotate: 90deg;
+}
+
+.btn-wrap-white .btn-next-white {
+  display: block;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+
+  background: url(../img/next-white.png) no-repeat 50%;
+  transition: 0.4s;
+  rotate: 90deg;
 }

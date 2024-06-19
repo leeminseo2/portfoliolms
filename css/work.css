@@ -1,0 +1,42 @@
+$(function () {
+  // GSAP
+  // GSAP ScrollTrigger 플러그인 등록
+
+  // Initialize the project slider
+  const $tabMenu = $('.tab-menu > a');
+  const $tabContent = $('.tab-con > div');
+
+  $tabContent.hide().eq(0).show();
+
+  $tabMenu.on('click', function (e) {
+      e.preventDefault();
+
+      const tIdx = $(this).index();
+
+      $tabMenu.removeClass('on').eq(tIdx).addClass('on');
+      $tabContent.hide().eq(tIdx).show();
+  });
+
+  const projectSliderWeb = new Swiper('.project-slider-web', {
+      direction: 'vertical',
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+      loop: true,
+      observer: true,
+      observeParents: true,
+  });
+
+  const $projectSliderSub = new Swiper('.project-slider-sub', {
+      // autoplay: true, // 사용시 오류 발생 가능
+      direction: 'vertical',
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+      loop: true,
+      observer: true,
+      observeParents: true,
+  });
+});

@@ -1,18 +1,5 @@
 $(function () {
   // GSAP
-  // GSAP ScrollTrigger 플러그인 등록
-
-  // Initialize the project slider
-  const projectSlider = new Swiper('.project-slider', {
-    direction: 'vertical',
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    mousewheel: {
-      invert: false,
-    },
-  });
 
   // 메인 헤더 애니메이션
   const mainTL = gsap.timeline();
@@ -28,7 +15,7 @@ $(function () {
       start: 'top 0', // .about-me의 상단이 뷰포트 상단에 도달할 때
       pin: true,
       scrub: 1,
-      markers: true,
+      // markers: true,
     },
   });
 
@@ -37,7 +24,7 @@ $(function () {
       y: 100,
       autoAlpha: 0,
       duration: 0.6,
-      stagger: 0.2,
+      stagger: 0.4,
     })
     .from('.about-me-info > *', {
       y: 100,
@@ -66,4 +53,13 @@ $(function () {
       },
     });
   });
+  const footerTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#footer',
+      start: 'top bottom', // '#footer' top reaches viewport top
+      markers: true, // Optional: adds visual markers for debugging
+    },
+  });
+
+  footerTL.from('#footer', { y: 100, autoAlpha: 0, duration: 1 });
 });

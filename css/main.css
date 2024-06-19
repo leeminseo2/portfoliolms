@@ -85,7 +85,8 @@
 .about {
   /* border: 1px solid #ff0; */
   position: relative;
-  margin-top: 20rem;
+  padding-top: 3rem;
+  margin-top: 16rem;
   height: 300vh;
 }
 
@@ -159,7 +160,8 @@
 
 .work {
   /* border: 1px solid #ff0; */
-  margin-top: 20rem;
+  margin-top: 16rem;
+  padding-top: 3rem;
   position: relative;
   z-index: 20;
 }
