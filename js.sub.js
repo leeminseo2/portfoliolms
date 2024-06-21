@@ -14,7 +14,7 @@ $(function () {
       trigger: '.about-me-wrap',
       start: 'top 0', // .about-me의 상단이 뷰포트 상단에 도달할 때
       pin: true,
-      scrub: 1,
+      scrub: 2,
       // markers: true,
     },
   });
@@ -29,7 +29,7 @@ $(function () {
     .from('.about-me-info > *', {
       y: 100,
       autoAlpha: 0,
-      duration: 0.6,
+      duration: 0.8,
       delay: 0.2,
     });
 

@@ -32,7 +32,7 @@ $(function () {
       start: 'top 0', // .about-con-wrap's top reaches 80% of viewport height
       pin: true,
       pinSpacing: false,
-      scrub: 1,
+      scrub: 3,
       // markers: true,
     },
   });
