@@ -33,7 +33,7 @@ $(function () {
       pin: true,
       pinSpacing: false,
       scrub: 1,
-      markers: true,
+      // markers: true,
     },
   });
 
@@ -76,7 +76,7 @@ $(function () {
     scrollTrigger: {
       trigger: '#footer',
       start: 'top bottom', // '#footer' top reaches viewport top
-      markers: true, // Optional: adds visual markers for debugging
+      // markers: true, // Optional: adds visual markers for debugging
     },
   });
 

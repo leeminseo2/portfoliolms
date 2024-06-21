@@ -47,7 +47,7 @@ $(function () {
       scrollTrigger: {
         trigger: item,
         // markers: true,
-        start: 'top 30%',
+        start: 'top 10%',
         toggleActions: 'play none reverse reverse',
         // pin: true,
       },
