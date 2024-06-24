@@ -8,11 +8,12 @@ $(function () {
     .from('.me h2', { y: 100, autoAlpha: 0, duration: 0.5 }, '-=0.3');
 
   // about-me 섹션 애니메이션
+
   const aboutMeTL = gsap.timeline({
     defaults: { ease: 'power4.inOut' },
     scrollTrigger: {
       trigger: '.about-me-wrap',
-      start: 'top 0', // .about-me의 상단이 뷰포트 상단에 도달할 때
+      start: 'top top', // .about-me의 상단이 뷰포트 상단에 도달할 때
       pin: true,
       scrub: 2,
       // markers: true,
@@ -20,17 +21,39 @@ $(function () {
   });
 
   aboutMeTL
-    .from('.about-me-con > *', {
+    .from('.about-me-con > strong', {
       y: 100,
       autoAlpha: 0,
-      duration: 0.6,
-      stagger: 0.4,
+      duration: 1.5,
+    })
+    .from('.about-me-con > h3', {
+      y: 100,
+      autoAlpha: 0,
+      duration: 3,
+      delay: 0.5,
+    })
+    .to('.about-me-con > strong > b', {
+      color: '#1bbaff',
+      duration: 3,
+      delay: 0.3,
+    })
+    .to('.about-me-con > h3 > b', {
+      color: '#1bbaff',
+      duration: 3,
+      delay: 0.3,
+    })
+    .from('.about-me-con > p', {
+      y: 100,
+      autoAlpha: 0,
+      duration: 3,
+      delay: 0.5,
     })
     .from('.about-me-info > *', {
       y: 100,
       autoAlpha: 0,
-      duration: 0.8,
-      delay: 0.2,
+      duration: 3,
+
+      stagger: 1,
     });
 
   gsap.utils.toArray('.word-keyword').forEach((item) => {
@@ -62,4 +85,22 @@ $(function () {
   });
 
   footerTL.from('#footer', { y: 100, autoAlpha: 0, duration: 1 });
+  $(document).ready(function () {
+    var offset = 1080; // 탑 버튼이 나타날 스크롤 위치
+    var duration = 500; // 애니메이션 시간
+
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > offset) {
+        $('.topButton').fadeIn(duration); // 스크롤 위치가 offset보다 크면 나타나기
+      } else {
+        $('.topButton').fadeOut(duration); // 그렇지 않으면 숨기기
+      }
+    });
+
+    $('.topButton').click(function (event) {
+      event.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, duration); // 맨 위로 부드럽게 스크롤
+      return false;
+    });
+  });
 });

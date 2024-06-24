@@ -69,16 +69,45 @@ $(function () {
       autoAlpha: 0,
       duration: 0.4,
       delay: 0.1,
+    })
+    .to('.about', {
+      height: 'auto',
     });
   // Ensure GSAP and ScrollTrigger plugins are loaded
   // Ensure GSAP and ScrollTrigger plugins are loaded
+  // const footerTL = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '#footer',
+  //     start: 'top bottom', // '#footer' top reaches viewport top
+  //     // markers: true, // Optional: adds visual markers for debugging
+  //   },
+  // });
+
   const footerTL = gsap.timeline({
     scrollTrigger: {
       trigger: '#footer',
       start: 'top bottom', // '#footer' top reaches viewport top
-      // markers: true, // Optional: adds visual markers for debugging
+      markers: true, // Optional: adds visual markers for debugging
     },
   });
 
   footerTL.from('#footer', { y: 100, autoAlpha: 0, duration: 1 });
+  $(document).ready(function () {
+    var offset = 1080; // 탑 버튼이 나타날 스크롤 위치
+    var duration = 500; // 애니메이션 시간
+
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > offset) {
+        $('.topButton').fadeIn(duration); // 스크롤 위치가 offset보다 크면 나타나기
+      } else {
+        $('.topButton').fadeOut(duration); // 그렇지 않으면 숨기기
+      }
+    });
+
+    $('.topButton').click(function (event) {
+      event.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, duration); // 맨 위로 부드럽게 스크롤
+      return false;
+    });
+  });
 });

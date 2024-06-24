@@ -54,6 +54,24 @@ $(function () {
   });
 
   footerTL.from('#footer', { y: 100, autoAlpha: 0, duration: 1 });
+  $(document).ready(function () {
+    var offset = 1080; // 탑 버튼이 나타날 스크롤 위치
+    var duration = 500; // 애니메이션 시간
+
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > offset) {
+        $('.topButton').fadeIn(duration); // 스크롤 위치가 offset보다 크면 나타나기
+      } else {
+        $('.topButton').fadeOut(duration); // 그렇지 않으면 숨기기
+      }
+    });
+
+    $('.topButton').click(function (event) {
+      event.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, duration); // 맨 위로 부드럽게 스크롤
+      return false;
+    });
+  });
 
   // const $window = $(window);
   // let x = 0;
