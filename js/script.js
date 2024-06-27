@@ -2,6 +2,48 @@ $(function () {
   // Initialize the work slider
   gsap.registerPlugin(ScrollTrigger);
 
+  const $window = $(window);
+  const $body = $('body');
+  let $loading = `<div class="loading">
+                     <div class="spinner">
+                        <div class="dot1"></div>
+                        <div class="dot2"></div>
+                      </div>
+                     </div>`;
+
+  // loading 구조 삽입
+  $body.append($loading);
+  // jquery 객체로 만들기
+  $loading = $('.loading');
+  // const $loading = $('.loading')
+
+  $window.on('load', function () {
+    //  로디 완료 후 1초 뒤에 사라지게
+    setTimeout(function () {
+      $loading.fadeOut();
+
+      // 메인헤더 애니메이션
+      const mainTL = gsap.timeline();
+      mainTL
+        .from('#header', { y: -100, autoAlpha: 0, duration: 1 })
+        .from(
+          '.visual-title h2',
+          { y: +100, autoAlpha: 0, duration: 0.5 },
+          '-=0.3'
+        )
+        .from(
+          '.visual-title strong',
+          { y: +100, autoAlpha: 0, duration: 0.5 },
+          '-=0.3'
+        )
+        .from(
+          '.visual-title p',
+          { y: +100, autoAlpha: 0, duration: 0.5 },
+          '-=0.3'
+        );
+    }, 1000);
+  });
+
   const workSlider = new Swiper('.work-slider', {
     loop: true,
     slidesPerView: 'auto',
@@ -10,18 +52,6 @@ $(function () {
       prevEl: '.btn-prev',
     },
   });
-
-  // 메인헤더 애니메이션
-  const mainTL = gsap.timeline();
-  mainTL
-    .from('#header', { y: -100, autoAlpha: 0, duration: 1 })
-    .from('.visual-title h2', { y: +100, autoAlpha: 0, duration: 0.5 }, '-=0.3')
-    .from(
-      '.visual-title strong',
-      { y: +100, autoAlpha: 0, duration: 0.5 },
-      '-=0.3'
-    )
-    .from('.visual-title p', { y: +100, autoAlpha: 0, duration: 0.5 }, '-=0.3');
 
   // 어바웃 섹션 스크롤 트리거
 
@@ -87,7 +117,7 @@ $(function () {
     scrollTrigger: {
       trigger: '#footer',
       start: 'top bottom', // '#footer' top reaches viewport top
-      markers: true, // Optional: adds visual markers for debugging
+      // markers: true, // Optional: adds visual markers for debugging
     },
   });
 
